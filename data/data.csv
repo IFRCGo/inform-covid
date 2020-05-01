@@ -1,4 +1,4 @@
-COUNTRY,ISO3,INFORM COVID-19 Risk Index,INFORM COVID Risk Index: Vulnerability dimension,INFORM COVID Risk Index: Hazard & Exposure dimension,INFORM COVID Risk Index: Lack of Coping Capacity dimension
+COUNTRY,ISO3,riskIndex,vulnerabilityDimension,hazardDimension,copingDimension
 Afghanistan,AFG,6.8,3.5,6.4,7.0
 Albania,ALB,4.2,5.7,3.6,5.0
 Algeria,DZA,3.9,4.2,4.3,2.3

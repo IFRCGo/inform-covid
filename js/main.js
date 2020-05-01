@@ -1,157 +1,167 @@
-createMap("map1", 'INFORM COVID-19 Risk Index', d3.schemeReds[6])
-createMap("map2", 'INFORM COVID Risk Index: Vulnerability dimension', d3.schemePurples[6])
-createMap("map3", 'INFORM COVID Risk Index: Hazard & Exposure dimension', d3.schemeOranges[6])
-createMap("map4", 'INFORM COVID Risk Index: Lack of Coping Capacity dimension', d3.schemeGreens[6])
+/* GLOBAL VARIABLES */
+var world;
+var leafletMaps = [];
+var columnIds = [];
+var noHoverText = "Hover for details"
 
-function positionTooltip(tooltip) {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
+/* HELPER FUNCTIONS */
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
+d3.selection.prototype.moveToBack = function() {
+    return this.each(function() {
+        var firstChild = this.parentNode.firstChild;
+        if (firstChild) {
+            this.parentNode.insertBefore(this, firstChild);
+        }
+    });
+};
+function handleMouseover(d){
+  if(d3.select(this).classed("admin__focus") === false){
+    d3.selectAll(".admin__focus").classed("admin__focus", false);
+    d3.selectAll(".admin__default").filter(function(selected){ 
+        return d.properties.iso === selected.properties.iso })
+      .classed("admin__focus", true)
+      .moveToFront();
+    columnIds.forEach(function(column){
+      var searchClass = '.details.' + column;
+      var infoHtml = ''
+      if(!!d.properties.inform){
+        infoHtml = d.properties.inform.COUNTRY + " - score: " +  d.properties.inform[column];
+      } else {
+        infoHtml = d.properties.name + " - INFORM score not available";
+      } 
+      d3.select(searchClass).html(infoHtml)
+    });
+  }
+}
+function handleMouseout(d){
+  d3.selectAll(".admin__focus").classed("admin__focus", false);
+  columnIds.forEach(function(column){
+    var searchClass = '.details.' + column;
+    var infoHtml = noHoverText;
+    d3.select(searchClass).html(infoHtml)
+  })
+}
 
-    const { pageX, pageY } = d3.event;
+/* BUILD THE PAGE */
+// fetch all data and wait until we have it to move to the next step
+Promise.all([
+    d3.json('./data/ne_50m-simpler-topo.json'),
+    d3.csv('./data/data.csv')
+]).then(
+    d => init(null, d[0], d[1])
+);
 
-    if (pageX > w / 2) {
-        tooltip.style("right", `${w - pageX}px`)
-        tooltip.style("left", "unset");
-    } else {
-        tooltip.style("left", `${pageX}px`)
-        tooltip.style("right", "unset");
+function init(err, geoFetched, informFetched){
+  // stash our data as globally accessible variables
+  world = topojson.feature(geoFetched, geoFetched.objects.world).features;
+  // attach our inform data to our geo data
+  world.forEach(function(admin){
+    admin.properties.inform = null;
+    informFetched.forEach(function(risk){
+      if(risk.ISO3 === admin.properties.iso) {
+        admin.properties.inform = risk;
+      }
+    });
+  });
+
+  Promise.all([  
+    // create our 4 maps
+    createMap("mapIndex", 'riskIndex', d3.schemeReds[6]),
+    createMap("mapVulnerability", 'vulnerabilityDimension', d3.schemePurples[6]),
+    createMap("mapHazard", 'hazardDimension', d3.schemeOranges[6]),
+    createMap("mapCoping", 'copingDimension', d3.schemeGreens[6])
+  ]).then( function(){
+    // sync up the movement of the four maps
+    for(i=0; i<leafletMaps.length; i++) { 
+      for(n=0; n<leafletMaps.length; n++) { 
+        if(i !== n) {
+          leafletMaps[i].sync(leafletMaps[n]);
+        }
+      }
     }
+  });
+}
 
-    if ((pageY - window.scrollY) > h / 2) {
-        tooltip.style("bottom", `${h - pageY}px`)
-        tooltip.style("top", "unset");
-    } else {
-        tooltip.style("top", `${pageY}px`)
-        tooltip.style("bottom", "unset");
+function createMap(divId, columnId, colorScheme) {
+  return new Promise(function(resolve,reject) {
+    // store the columnId in an Array, we'll use it when populating info boxes on hover 
+    columnIds = columnIds.concat(columnId);
+    // initialize a leaflet map
+    var map = L.map(divId).setView([20, 25], 1);
+    // add an info box to show info on hover 
+    var info = L.control();
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info');
+        this._div.innerHTML = '<span class="details ' + columnId + '">' + noHoverText + '</span>';
+        return this._div;
+    };
+    info.addTo(map);
+    // these functions let us use d3 to draw features on the leaflet map
+    function projectPoint(x, y){
+      var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+      this.stream.point(point.x, point.y);
     }
+    var transform = d3.geoTransform({point: projectPoint});
+    var path = d3.geoPath().projection(transform);
+    // use leaflet to add an SVG layer to each map object
+    L.svg().addTo(map);
+    // stash the leaflet map object 
+    // so we can access it later outside of this function
+    leafletMaps = leafletMaps.concat(map);
+    // pick up the SVGs from the map objects
+    var svg = d3.select('#'+divId).select('svg');
+    var geoGroup = svg.append('g').attr('id', 'geo-'+divId);
+    // make sure the relevant inform data is stored as integer not string
+    world.forEach(function(d){
+      if(!!d.properties.inform){
+        d.properties.inform[columnId] = +d.properties.inform[columnId];
+      }
+    });
+    // set up our color scale
+    colorScheme.unshift("#ccc");
+    var colorScale = d3.scaleThreshold()
+        .domain([0, 2, 4, 6, 8, 10])
+        .range(colorScheme);
+    // draw the admin areas on the map
+    var admins = geoGroup.selectAll("path")
+      // .data(sectorJoin, function(d){ return d.properties.ID; })
+      .data(world)
+      .enter().append("path")
+      .attr("class", "admin__default")
+      .style("fill", function(d){
+        if(!!d.properties.inform){
+          return colorScale(d.properties.inform[columnId]);
+        } 
+      })
+      .attr("d", path)
+      .on("mouseover", handleMouseover)
+      .on("mouseout", handleMouseout)
+
+    // if the map changes we need to redraw the admin areas
+    updatePath = function(){ admins.attr("d", path); }
+    map.on('zoom move viewreset', updatePath);
+    updatePath();
     
-}
-
-// create a tooltip
-var tooltip = d3.select("#main")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "1px")
-    .style ("border-color", "#003246")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
-
-var mouseover = function (d) {
-    tooltip.style("opacity", 0.9)
-
-    if (!d3.select(this).classed("highlight")) {
-        d3.select(this).attr("class", "hover");
-    }
-}
-var mousemove = function (d, colummnId) {
-    //console.log('d',d);
-    tooltip.html(`<strong>${d.properties.name}</strong><br><br>${colummnId}<br><br>${d.val}`)
-    positionTooltip(tooltip);
-}
-var mouseleave = function (d) {
-    tooltip.style("opacity", 0)
-    if (!d3.select(this).classed("highlight")) {
-        d3.select(this).attr("class", "");
-    }
-}
-
-function createMap(divId, colummnId, colorScheme) {
-    var svgDiv = document.getElementById(divId).getBoundingClientRect();
-    let width = svgDiv.width;
-    let height = svgDiv.height;
-
-    // colorScheme.unshift("#ccc")
-
-    const svg = d3.select("#" + divId)
-        .append('svg')
-        .attr('width', width)
-        .attr('height', height)
-        .append('g')
-        .attr('class', 'map');
-
-
-    Promise.all([
-        d3.json('https://enjalot.github.io/wwsd/data/world/world-110m.geojson'),
-        d3.csv('data.csv')
-    ]).then(
-        d => ready(null, d[0], d[1])
-    );
-
-    function ready(error, data, csvData) {
-        data.features = data.features.filter(d => d.id !== "GRL" && d.id !== "ATA") //remove GRL and ATA from map 
-
-        var projection = d3.geoMercator().fitSize([width, height], data);
-        var path = d3.geoPath().projection(projection);
-
-        const country = {};
-        // console.log('csvData', csvData);
-        csvData.forEach(d => { country[d.ISO3] = +d[colummnId]; });
-        data.features.forEach(d => { d.val = country[d.id] });
-
-        var colorScale = d3.scaleThreshold()
-            .domain([0, 2, 4, 6, 8, 10])
-            .range(colorScheme);
-
-        svg.append('g')
-            .attr('class', 'countries')
-            .selectAll('path')
-            .data(data.features)
-            .enter().append('path')
-            .attr('d', path)
-            .style('fill', d => {
-                // console.log('d.val', d.val);
-                if (!colorScale(d.val)) {
-                    return "#ccc"
-                }
-                return colorScale(d.val)
-            })
-            .style('stroke', 'white')
-            .style('opacity', 0.8)
-            .style('stroke-width', 0.3)
-            .on("mouseover", mouseover)
-            .on("mousemove", (d) => mousemove(d, colummnId))
-            .on("mouseleave", mouseleave)
-
-        //svg.append("text")
-            // .attr("transform", "rotate(-90)")
-           // .attr("y", 20)
-          //  .attr("x", 50)
-            // .attr("dy", "1em")
-          //  .style("text-anchor", "middle")
-         //   .text(colummnId);
-
-        var x = d3.scaleLinear()
-            .domain(colorScale.domain())
-            .rangeRound([10, 50]);
-
-        var g = svg.append("g")
-            .attr("class", "key")
-            .attr("transform", "translate(250, 350)");
-
-        g.selectAll("rect")
-            .data(colorScale.range().map(function(d) {
-                d = colorScale.invertExtent(d);
-                if (d[0] == null) d[0] = x.domain()[0];
-                if (d[1] == null) d[1] = x.domain()[1];
-                return d;
-            }))
-            .enter().append("rect")
-            .attr("height", 6)
-            .attr("x", function(d) { return x(d[0]); })
-            .attr("width", function(d) { return Math.abs(x(d[1]) - x(d[0])); })
-            .attr("fill", function(d) { return colorScale(d[0]); });
-
-        const axisScale = d3.scaleBand()
-            .domain(['Very low', 'Low', 'Medium', 'High', 'Very high'])
-            .rangeRound([10, 210]);
-        const axis = g.call(
-            d3.axisBottom(axisScale)
-                .tickSize(12)
-        );
-        axis.select(".domain").remove();
-        axis.selectAll("line").remove();
-    }
+    d3.select(".legend.row." + divId).selectAll('div').data(colorScale.domain())
+      .enter().append('div')
+      .attr('class', "col px-0")
+      .html(function(d){
+        return '<div style="height: 10px; background-color:' + colorScale(d) + '">&nbsp;</div>'
+      })
+    d3.select(".legend.row." + divId + " .col:first-child")
+      .classed('px-0', false)
+      .classed('pr-0', true)
+      // .select('div').html('<span class="legendText first">Very low</span>')
+      
+    d3.select(".legend.row." + divId + " .col:last-child")
+      .classed('px-0', false)
+      .classed('pl-0', true)
+      // .select('div').html('<span class="legendText last">Very high</span>')
+    
+    resolve();
+  })
 }
