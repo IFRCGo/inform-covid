@@ -314,11 +314,11 @@ the pandemic.</p>
 
                 var x = d3.scaleLinear()
                     .domain(colorScale.domain())
-                    .rangeRound([10, 35]);
+                    .rangeRound([10, 50]);
 
                 var g = svg.append("g")
                     .attr("class", "key")
-                    .attr("transform", "translate(0, 350)");
+                    .attr("transform", "translate(250, 350)");
 
                 g.selectAll("rect")
                     .data(colorScale.range().map(function(d) {
@@ -333,13 +333,15 @@ the pandemic.</p>
                     .attr("width", function(d) { return Math.abs(x(d[1]) - x(d[0])); })
                     .attr("fill", function(d) { return colorScale(d[0]); });
 
-                g.call(d3.axisBottom(x)
-                    .tickSize(10)
-                    .tickFormat(function(x, i) { return i; })
-                    .tickValues(colorScale.domain()))
-                    .select(".domain")
-                    .remove();
-
+                const axisScale = d3.scaleBand()
+                    .domain(['Very low', 'Low', 'Medium', 'High', 'Very high'])
+                    .rangeRound([10, 210]);
+                const axis = g.call(
+                    d3.axisBottom(axisScale)
+                        .tickSize(12)
+                );
+                axis.select(".domain").remove();
+                axis.selectAll("line").remove();
             }
         }
     </script>
