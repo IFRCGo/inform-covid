@@ -5,6 +5,7 @@ var columnIds = [];
 var noHoverText = "Hover for details"
 
 /* HELPER FUNCTIONS */
+var f = d3.format(".1f")
 d3.selection.prototype.moveToFront = function() {
   return this.each(function(){
     this.parentNode.appendChild(this);
@@ -29,7 +30,7 @@ function handleMouseover(d){
       var searchClass = '.details.' + column;
       var infoHtml = ''
       if(!!d.properties.inform){
-        infoHtml = d.properties.inform.COUNTRY + " - score: " +  d.properties.inform[column];
+        infoHtml = d.properties.inform.COUNTRY + " - score: " +  f(d.properties.inform[column]);
       } else {
         infoHtml = d.properties.name + " - INFORM score not available";
       } 
