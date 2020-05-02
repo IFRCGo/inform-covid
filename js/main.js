@@ -123,7 +123,7 @@ function createMap(divId, columnId, colorScheme) {
       }
     });
     // set up our color scale
-    // https://www.d3indepth.com/scales/
+    // https://github.com/d3/d3-scale#scaleThreshold
     var colorScale = d3.scaleThreshold()
         .domain([1, 3, 5, 7, 9])
         .range(colorScheme);
