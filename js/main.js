@@ -123,9 +123,9 @@ function createMap(divId, columnId, colorScheme) {
       }
     });
     // set up our color scale
-    colorScheme.unshift("#ccc");
+    // https://www.d3indepth.com/scales/
     var colorScale = d3.scaleThreshold()
-        .domain([0, 2, 4, 6, 8, 10])
+        .domain([1, 3, 5, 7, 9])
         .range(colorScheme);
     // draw the admin areas on the map
     var admins = geoGroup.selectAll("path")
@@ -147,7 +147,7 @@ function createMap(divId, columnId, colorScheme) {
     map.on('zoom move viewreset', updatePath);
     updatePath();
     
-    d3.select(".legend.row." + divId).selectAll('div').data(colorScale.domain())
+    d3.select(".legend.row." + divId).selectAll('div').data([0,1,3,5,7,9])
       .enter().append('div')
       .attr('class', "col px-0")
       .html(function(d){
