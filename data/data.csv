@@ -1,192 +1,192 @@
 COUNTRY,ISO3,riskIndex,vulnerabilityDimension,hazardDimension,copingDimension
-Afghanistan,AFG,6.8,3.5,6.4,7.0
-Albania,ALB,4.2,5.7,3.6,5.0
-Algeria,DZA,3.9,4.2,4.3,2.3
-Angola,AGO,5.6,3.0,6.5,4.6
-Antigua and Barbuda,ATG,3.6,4.0,2.8,5.4
-Argentina,ARG,3.4,4.6,2.8,4.3
-Armenia,ARM,3.6,6.1,2.7,3.4
-Australia,AUS,2.1,5.1,2.5,0.5
-Austria,AUT,3.0,6.8,2.5,3.3
-Azerbaijan,AZE,3.9,4.3,4.1,3.4
-Bahamas,BHS,3.9,4.2,3.4,5.0
-Bahrain,BHR,3.9,4.3,6.4,1.9
-Bangladesh,BGD,5.2,3.9,5.7,4.6
-Barbados,BRB,4.0,6.9,3.0,5.0
-Belarus,BLR,3.8,6.3,2.9,5.0
-Belgium,BEL,2.8,7.0,3.4,1.0
-Belize,BLZ,3.8,4.0,2.6,5.9
-Benin,BEN,5.8,2.9,7.0,7.0
-Bhutan,BTN,4.1,2.7,3.9,4.9
-Bolivia,BOL,4.9,3.8,4.6,7.5
-Bosnia and Herzegovina,BIH,4.1,7.2,2.1,7.1
-Botswana,BWA,4.7,4.3,3.9,7.4
-Brazil,BRA,3.5,4.4,3.0,1.9
-Brunei Darussalam,BRN,3.1,4.0,3.9,2.5
-Bulgaria,BGR,3.7,7.8,2.7,3.1
-Burkina Faso,BFA,6.3,2.5,7.7,7.3
-Burundi,BDI,6.5,2.8,6.8,7.6
-Cabo Verde,CPV,4.5,3.3,4.7,6.5
-Cambodia,KHM,4.9,3.6,4.9,5.2
-Cameroon,CMR,5.7,2.4,6.4,5.6
-Canada,CAN,2.0,5.7,2.0,0.1
-Central African Republic,CAF,7.6,2.8,6.5,9.4
-Chad,TCD,7.2,2.8,7.7,7.3
-Chile,CHL,3.0,4.7,2.9,2.6
-China,CHN,3.4,5.2,4.0,0.3
-Colombia,COL,4.3,4.2,3.8,4.2
-Comoros,COM,6.0,2.7,6.6,9.1
-Congo,COG,5.7,2.6,5.9,5.2
-Congo DR,COD,6.8,2.6,7.9,5.8
-Costa Rica,CRI,3.4,4.5,3.2,2.8
-Côte d'Ivoire,CIV,5.6,2.7,6.6,5.3
-Croatia,HRV,3.5,8.1,2.4,2.6
-Cuba,CUB,3.4,6.4,2.9,2.5
-Cyprus,CYP,3.3,5.6,2.9,2.6
-Czech Republic,CZE,3.4,7.8,2.8,2.9
-Denmark,DNK,2.1,7.1,2.9,0.2
-Djibouti,DJI,5.5,3.3,5.4,6.9
-Dominica,DMA,4.2,5.3,3.9,4.0
-Dominican Republic,DOM,4.3,4.2,4.2,5.1
-Ecuador,ECU,3.9,3.7,3.5,3.9
-Egypt,EGY,3.6,4.6,3.0,2.2
-El Salvador,SLV,4.2,5.2,3.8,3.8
-Equatorial Guinea,GNQ,5.8,2.9,6.7,7.7
-Eritrea,ERI,5.9,2.8,6.4,7.0
-Estonia,EST,3.0,7.0,2.3,2.6
-Eswatini,SWZ,5.3,5.3,4.9,5.4
-Ethiopia,ETH,5.9,2.5,7.6,4.6
-Fiji,FJI,4.1,5.1,3.3,5.6
-Finland,FIN,2.1,7.1,2.3,0.3
-France,FRA,3.0,7.0,2.8,2.2
-Gabon,GAB,5.0,2.7,5.0,6.8
-Gambia,GMB,5.7,2.1,6.9,7.0
-Georgia,GEO,4.0,6.6,3.1,4.2
-Germany,DEU,2.1,7.8,2.2,0.5
-Ghana,GHA,4.7,2.5,5.5,5.2
-Greece,GRC,3.3,7.7,2.2,2.5
-Grenada,GRD,3.6,4.8,2.7,5.0
-Guatemala,GTM,4.8,3.6,4.6,5.7
-Guinea,GIN,6.0,2.9,6.9,4.8
-Guinea-Bissau,GNB,6.2,2.3,7.0,6.8
-Guyana,GUY,3.7,4.1,2.4,5.0
-Haiti,HTI,6.6,3.9,6.8,6.8
-Honduras,HND,4.9,3.3,4.3,7.1
-Hungary,HUN,3.4,7.7,2.4,2.9
-Iceland,ISL,2.6,5.7,3.8,0.8
-India,IND,4.6,4.5,4.7,3.8
-Indonesia,IDN,4.4,4.4,4.4,4.4
-Iran,IRN,3.7,4.2,3.6,2.0
-Iraq,IRQ,4.8,3.1,4.2,4.7
-Ireland,IRL,3.0,5.9,3.1,2.9
-Israel,ISR,2.7,4.6,4.1,0.5
-Italy,ITA,3.1,8.2,2.8,0.8
-Jamaica,JAM,4.1,5.2,4.0,3.7
-Japan,JPN,2.3,8.2,3.2,0.0
-Jordan,JOR,4.3,3.0,4.1,5.1
-Kazakhstan,KAZ,3.1,4.2,2.6,4.0
-Kenya,KEN,5.6,2.9,6.0,5.8
-Kiribati,KIR,5.9,6.2,5.9,6.2
-Korea DPR,PRK,4.7,4.8,3.9,4.4
-Korea Republic of,KOR,2.9,7.1,3.9,0.3
-Kuwait,KWT,3.8,4.3,4.9,3.5
-Kyrgyzstan,KGZ,3.8,3.1,3.1,5.9
-Lao PDR,LAO,4.6,3.2,4.1,7.0
-Latvia,LVA,3.4,8.1,2.4,2.5
-Lebanon,LBN,5.0,5.5,4.5,4.6
-Lesotho,LSO,6.0,5.6,5.5,7.1
-Liberia,LBR,6.2,3.2,7.0,5.2
-Libya,LBY,4.3,3.7,3.0,6.7
-Liechtenstein,LIE,1.9,4.0,1.9,x
-Lithuania,LTU,2.8,7.6,2.4,0.9
-Luxembourg,LUX,3.1,6.4,3.8,2.5
-Madagascar,MDG,6.1,2.7,6.9,7.5
-Malawi,MWI,5.7,3.1,6.6,5.4
-Malaysia,MYS,3.2,4.2,4.2,0.3
-Maldives,MDV,4.0,3.0,4.8,5.3
-Mali,MLI,5.7,2.5,6.0,5.1
-Malta,MLT,4.1,7.2,4.7,3.3
-Marshall Islands,MHL,5.4,4.7,4.7,6.3
-Mauritania,MRT,5.8,2.4,6.3,7.5
-Mauritius,MUS,3.7,7.2,3.0,3.2
-Mexico,MEX,3.7,5.2,3.3,2.0
-Micronesia,FSM,5.0,5.5,3.6,7.5
-Moldova Republic of,MDA,4.4,6.6,3.8,4.5
-Mongolia,MNG,3.7,3.5,3.8,3.2
-Montenegro,MNE,3.7,5.9,2.7,5.2
-Morocco,MAR,4.3,5.0,4.1,3.8
-Mozambique,MOZ,6.2,3.5,6.9,4.9
-Myanmar,MMR,4.8,4.4,4.3,4.2
-Namibia,NAM,5.1,3.6,5.1,6.4
-Nauru,NRU,5.2,5.1,4.9,7.1
-Nepal,NPL,5.1,3.4,5.1,6.4
-Netherlands,NLD,2.4,6.6,3.5,0.6
-New Zealand,NZL,2.1,5.1,3.1,0.5
-Nicaragua,NIC,4.6,4.2,4.3,5.1
-Niger,NER,6.2,2.9,7.1,5.3
-Nigeria,NGA,5.9,2.7,6.5,4.9
-North Macedonia,MKD,3.7,6.4,2.5,4.4
-Norway,NOR,1.9,6.1,2.0,0.4
-Oman,OMN,3.0,3.0,5.0,1.3
-Pakistan,PAK,5.3,3.4,5.3,6.2
-Palau,PLW,3.9,3.7,3.5,5.8
-Palestine,PSE,5.0,2.9,5.1,7.5
-Panama,PAN,3.7,4.2,3.6,4.0
-Papua New Guinea,PNG,5.7,4.2,5.6,7.0
-Paraguay,PRY,3.6,3.7,2.5,5.7
-Peru,PER,4.3,3.8,4.0,4.8
-Philippines,PHL,4.7,4.3,4.5,5.0
-Poland,POL,3.1,7.6,2.0,2.5
-Portugal,PRT,2.8,8.1,2.2,1.2
-Qatar,QAT,3.3,3.4,5.0,3.2
-Romania,ROU,3.7,7.9,2.4,2.7
-Russian Federation,RUS,3.2,6.7,2.3,1.3
-Rwanda,RWA,5.0,2.2,5.9,4.2
-Saint Kitts and Nevis,KNA,3.3,3.9,2.9,5.1
-Saint Lucia,LCA,3.9,6.2,2.5,4.5
-Saint Vincent and the Grenadines,VCT,4.1,5.6,3.8,5.3
-Samoa,WSM,3.3,3.7,1.8,5.1
-Sao Tome and Principe,STP,5.1,2.2,6.4,6.8
-Saudi Arabia,SAU,2.8,3.2,3.1,2.8
-Senegal,SEN,5.1,2.1,6.1,5.3
-Serbia,SRB,3.7,7.3,2.3,4.1
-Seychelles,SYC,4.0,5.3,3.8,5.1
-Sierra Leone,SLE,6.1,2.8,7.1,5.6
-Singapore,SGP,2.4,5.8,4.0,0.5
-Slovakia,SVK,3.3,7.4,2.5,2.8
-Slovenia,SVN,2.7,7.8,2.0,0.9
-Solomon Islands,SLB,5.6,3.3,5.7,7.1
-Somalia,SOM,7.3,2.6,6.9,7.2
-South Africa,ZAF,4.7,5.5,4.1,4.2
-South Sudan,SDS,7.3,2.7,7.3,6.8
-Spain,ESP,2.8,7.7,2.5,0.8
-Sri Lanka,LKA,4.3,5.5,3.4,5.2
-Sudan,SDN,5.8,3.2,6.8,4.3
-Suriname,SUR,3.5,4.3,2.5,3.9
-Sweden,SWE,2.2,6.4,2.8,0.4
-Switzerland,CHE,1.9,4.3,3.7,0.0
-Syria,SYR,4.7,3.1,2.9,5.0
-Tajikistan,TJK,4.3,2.2,4.3,5.9
-Tanzania,TZA,5.6,2.4,6.4,5.2
-Thailand,THA,3.8,6.3,3.2,2.3
-Timor-Leste,TLS,5.5,3.2,5.6,6.6
-Togo,TGO,5.9,3.2,6.8,7.2
-Tonga,TON,4.0,4.3,2.7,5.9
-Trinidad and Tobago,TTO,3.8,6.3,2.6,5.1
-Tunisia,TUN,3.7,4.9,3.3,4.2
-Turkey,TUR,3.9,5.4,3.4,2.6
-Turkmenistan,TKM,3.3,3.2,3.1,4.2
-Tuvalu,TUV,5.1,4.6,4.8,6.1
-Uganda,UGA,6.1,2.6,7.1,5.0
-Ukraine,UKR,4.0,7.2,2.4,5.0
-United Arab Emirates,ARE,2.4,3.4,4.4,0.3
-United Kingdom,GBR,2.6,6.5,3.2,0.4
-United States of America,USA,2.5,6.1,2.8,0.5
-Uruguay,URY,3.2,5.2,2.9,3.3
-Uzbekistan,UZB,4.1,3.4,3.5,6.6
-Vanuatu,VUT,5.2,3.4,4.7,7.1
-Venezuela,VEN,4.4,4.4,3.2,5.4
-Viet Nam,VNM,3.8,4.6,3.7,3.2
-Yemen,YEM,6.4,3.1,6.3,6.2
-Zambia,ZMB,6.1,2.7,6.9,7.2
-Zimbabwe,ZWE,5.3,4.0,4.8,4.8
+Afghanistan,AFG,6.8,6.4,6.4,7.7
+Albania,ALB,4.2,4.1,3.6,4.9
+Algeria,DZA,3.9,3.6,4.3,3.9
+Angola,AGO,5.6,4.3,6.5,6.2
+Antigua and Barbuda,ATG,3.6,3.4,2.8,4.9
+Argentina,ARG,3.4,3.2,2.8,4.2
+Armenia,ARM,3.6,4.4,2.7,3.8
+Australia,AUS,2.1,3.5,2.5,1.1
+Austria,AUT,3,4.7,2.5,2.4
+Azerbaijan,AZE,3.9,3.8,4.1,3.9
+Bahamas,BHS,3.9,3.9,3.4,4.4
+Bahrain,BHR,3.9,2.9,6.4,3.1
+Bangladesh,BGD,5.2,4.6,5.7,5.5
+Barbados,BRB,4,4.8,3,4.3
+Belarus,BLR,3.8,4.2,2.9,4.5
+Belgium,BEL,2.8,4.7,3.4,1.4
+Belize,BLZ,3.8,3.6,2.6,5.7
+Benin,BEN,5.8,4.1,7,6.7
+Bhutan,BTN,4.1,3.9,3.9,4.6
+Bolivia,BOL,4.9,3.8,4.6,6.7
+Bosnia and Herzegovina,BIH,4.1,5.4,2.1,6.2
+Botswana,BWA,4.7,4.3,3.9,6.2
+Brazil,BRA,3.5,3.7,3,3.7
+Brunei Darussalam,BRN,3.1,2.7,3.9,2.8
+Bulgaria,BGR,3.7,5.6,2.7,3.3
+Burkina Faso,BFA,6.3,4.7,7.7,6.9
+Burundi,BDI,6.5,5.4,6.8,7.6
+Cabo Verde,CPV,4.5,3.4,4.7,5.6
+Cambodia,KHM,4.9,4.1,4.9,5.9
+Cameroon,CMR,5.7,4.6,6.4,6.4
+Canada,CAN,2,3.9,2,1.1
+Central African Republic,CAF,7.6,7.3,6.5,9.1
+Chad,TCD,7.2,5.9,7.7,8.3
+Chile,CHL,3,3.3,2.9,2.8
+China,CHN,3.4,4.1,4,2.5
+Colombia,COL,4.3,4.5,3.8,4.6
+Comoros,COM,6,3.9,6.6,8.2
+Congo,COG,5.7,4.8,5.9,6.4
+Congo DR,COD,6.8,5.7,7.9,6.9
+Costa Rica,CRI,3.4,3.5,3.2,3.4
+Côte d'Ivoire,CIV,5.6,4.4,6.6,6
+Croatia,HRV,3.5,5.6,2.4,3.1
+Cuba,CUB,3.4,4.4,2.9,3
+Cyprus,CYP,3.3,4.4,2.9,2.8
+Czech Republic,CZE,3.4,5.3,2.8,2.7
+Denmark,DNK,2.1,4.8,2.9,0.7
+Djibouti,DJI,5.5,4.6,5.4,6.8
+Dominica,DMA,4.2,4,3.9,4.8
+Dominican Republic,DOM,4.3,3.5,4.2,5.5
+Ecuador,ECU,3.9,3.6,3.5,4.6
+Egypt,EGY,3.6,4,3,4
+El Salvador,SLV,4.2,4.2,3.8,4.7
+Equatorial Guinea,GNQ,5.8,3.9,6.7,7.6
+Eritrea,ERI,5.9,4.4,6.4,7.2
+Estonia,EST,3,4.7,2.3,2.4
+Eswatini,SWZ,5.3,5.1,4.9,5.8
+Ethiopia,ETH,5.9,4.7,7.6,5.8
+Fiji,FJI,4.1,4.3,3.3,5
+Finland,FIN,2.1,4.8,2.3,0.8
+France,FRA,3,4.9,2.8,2
+Gabon,GAB,5,3.7,5,6.6
+Gambia,GMB,5.7,3.9,6.9,6.9
+Georgia,GEO,4,5.3,3.1,4
+Germany,DEU,2.1,5.6,2.2,0.8
+Ghana,GHA,4.7,3.5,5.5,5.5
+Greece,GRC,3.3,5.6,2.2,2.9
+Grenada,GRD,3.6,3.7,2.7,4.8
+Guatemala,GTM,4.8,4.1,4.6,5.9
+Guinea,GIN,6,4.7,6.9,6.7
+Guinea-Bissau,GNB,6.2,4.7,7,7.2
+Guyana,GUY,3.7,3.9,2.4,5.2
+Haiti,HTI,6.6,5.6,6.8,7.7
+Honduras,HND,4.9,4.1,4.3,6.5
+Hungary,HUN,3.4,5.4,2.4,3.1
+Iceland,ISL,2.6,3.6,3.8,1.3
+India,IND,4.6,4.5,4.7,4.6
+Indonesia,IDN,4.4,3.9,4.4,5.1
+Iran,IRN,3.7,3.7,3.6,3.8
+Iraq,IRQ,4.8,4.5,4.2,6
+Ireland,IRL,3,3.8,3.1,2.4
+Israel,ISR,2.7,3.2,4.1,1.5
+Italy,ITA,3.1,5.8,2.8,1.9
+Jamaica,JAM,4.1,4.1,4,4.2
+Japan,JPN,2.3,5.7,3.2,0.7
+Jordan,JOR,4.3,4,4.1,4.8
+Kazakhstan,KAZ,3.1,2.7,2.6,4.1
+Kenya,KEN,5.6,4.7,6,6.3
+Kiribati,KIR,5.9,5.9,5.9,5.9
+Korea DPR,PRK,4.7,5.4,3.9,5
+Korea Republic of,KOR,2.9,4.8,3.9,1.3
+Kuwait,KWT,3.8,3.2,4.9,3.6
+Kyrgyzstan,KGZ,3.8,3.1,3.1,5.7
+Lao PDR,LAO,4.6,3.6,4.1,6.6
+Latvia,LVA,3.4,5.6,2.4,2.8
+Lebanon,LBN,5,5.4,4.5,5.2
+Lesotho,LSO,6,5.7,5.5,6.8
+Liberia,LBR,6.2,5.3,7,6.4
+Libya,LBY,4.3,3.9,3,6.7
+Liechtenstein,LIE,1.9,2.6,1.9,1.5
+Lithuania,LTU,2.8,5.2,2.4,1.7
+Luxembourg,LUX,3.1,4.2,3.8,1.9
+Madagascar,MDG,6.1,4.6,6.9,7.3
+Malawi,MWI,5.7,4.8,6.6,6
+Malaysia,MYS,3.2,3.6,4.2,2.1
+Maldives,MDV,4,2.5,4.8,5.2
+Mali,MLI,5.7,4.8,6,6.5
+Malta,MLT,4.1,4.9,4.7,2.9
+Marshall Islands,MHL,5.4,4.8,4.7,7
+Mauritania,MRT,5.8,4.1,6.3,7.4
+Mauritius,MUS,3.7,5,3,3.4
+Mexico,MEX,3.7,4.2,3.3,3.6
+Micronesia,FSM,5,5.2,3.6,6.5
+Moldova Republic of,MDA,4.4,4.8,3.8,4.8
+Mongolia,MNG,3.7,3.3,3.8,4.1
+Montenegro,MNE,3.7,3.9,2.7,4.7
+Morocco,MAR,4.3,4.2,4.1,4.5
+Mozambique,MOZ,6.2,5.7,6.9,6.1
+Myanmar,MMR,4.8,4.8,4.3,5.5
+Namibia,NAM,5.1,4.4,5.1,5.8
+Nauru,NRU,5.2,4.7,4.9,6
+Nepal,NPL,5.1,4.1,5.1,6.4
+Netherlands,NLD,2.4,4.5,3.5,0.9
+New Zealand,NZL,2.1,3.2,3.1,1
+Nicaragua,NIC,4.6,4,4.3,5.6
+Niger,NER,6.2,5.3,7.1,6.3
+Nigeria,NGA,5.9,4.4,6.5,7.2
+North Macedonia,MKD,3.7,4.5,2.5,4.4
+Norway,NOR,1.9,4.1,2,0.8
+Oman,OMN,3,2.2,5,2.4
+Pakistan,PAK,5.3,4.4,5.3,6.4
+Palau,PLW,3.9,3.3,3.5,5.2
+Palestine,PSE,5,4.1,5.1,6
+Panama,PAN,3.7,3.4,3.6,4.3
+Papua New Guinea,PNG,5.7,4.8,5.6,6.8
+Paraguay,PRY,3.6,3.4,2.5,5.7
+Peru,PER,4.3,3.8,4,5.1
+Philippines,PHL,4.7,4.1,4.5,5.5
+Poland,POL,3.1,5.2,2,2.8
+Portugal,PRT,2.8,5.6,2.2,1.7
+Qatar,QAT,3.3,2.3,5,3.2
+Romania,ROU,3.7,5.6,2.4,3.7
+Russian Federation,RUS,3.2,4.8,2.3,3
+Rwanda,RWA,5,4.6,5.9,4.6
+Saint Kitts and Nevis,KNA,3.3,2.9,2.9,4.3
+Saint Lucia,LCA,3.9,4.8,2.5,4.8
+Saint Vincent and the Grenadines,VCT,4.1,3.9,3.8,4.8
+Samoa,WSM,3.3,3.8,1.8,5.2
+Sao Tome and Principe,STP,5.1,3.4,6.4,6.2
+Saudi Arabia,SAU,2.8,2.3,3.1,3
+Senegal,SEN,5.1,3.9,6.1,5.6
+Serbia,SRB,3.7,5.2,2.3,4.1
+Seychelles,SYC,4,3.9,3.8,4.4
+Sierra Leone,SLE,6.1,4.8,7.1,6.7
+Singapore,SGP,2.4,3.9,4,0.9
+Slovakia,SVK,3.3,5,2.5,3
+Slovenia,SVN,2.7,5.2,2,1.8
+Solomon Islands,SLB,5.6,4.6,5.7,6.6
+Somalia,SOM,7.3,6.6,6.9,8.5
+South Africa,ZAF,4.7,5.4,4.1,4.7
+South Sudan,SDS,7.3,6.2,7.3,8.6
+Spain,ESP,2.8,5.4,2.5,1.6
+Sri Lanka,LKA,4.3,4.5,3.4,5.1
+Sudan,SDN,5.8,4.9,6.8,6
+Suriname,SUR,3.5,3.7,2.5,4.8
+Sweden,SWE,2.2,4.6,2.8,0.8
+Switzerland,CHE,1.9,3.1,3.7,0.6
+Syria,SYR,4.7,5.6,2.9,6.5
+Tajikistan,TJK,4.3,3.2,4.3,5.9
+Tanzania,TZA,5.6,4.6,6.4,5.9
+Thailand,THA,3.8,4.7,3.2,3.7
+Timor-Leste,TLS,5.5,4.6,5.6,6.4
+Togo,TGO,5.9,4.3,6.8,6.9
+Tonga,TON,4,4.3,2.7,5.5
+Trinidad and Tobago,TTO,3.8,4.5,2.6,4.6
+Tunisia,TUN,3.7,3.5,3.3,4.5
+Turkey,TUR,3.9,4.6,3.4,3.7
+Turkmenistan,TKM,3.3,2.4,3.1,4.9
+Tuvalu,TUV,5.1,4.8,4.8,5.8
+Uganda,UGA,6.1,5.3,7.1,5.9
+Ukraine,UKR,4,5.4,2.4,5.1
+United Arab Emirates,ARE,2.4,2.4,4.4,1.3
+United Kingdom,GBR,2.6,4.5,3.2,1.2
+United States of America,USA,2.5,4.3,2.8,1.3
+Uruguay,URY,3.2,3.7,2.9,3
+Uzbekistan,UZB,4.1,3.2,3.5,6
+Vanuatu,VUT,5.2,4.8,4.7,6.4
+Venezuela,VEN,4.4,4.2,3.2,6.4
+Viet Nam,VNM,3.8,3.6,3.7,4.2
+Yemen,YEM,6.4,5.8,6.3,7.2
+Zambia,ZMB,6.1,5,6.9,6.7
+Zimbabwe,ZWE,5.3,5.3,4.8,6
