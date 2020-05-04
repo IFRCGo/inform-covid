@@ -71,10 +71,10 @@ function init(err, geoFetched, informFetched){
 
   Promise.all([  
     // create our 4 maps
-    createMap("mapIndex", 'riskIndex', d3.schemeReds[6]),
-    createMap("mapVulnerability", 'vulnerabilityDimension', d3.schemePurples[6]),
-    createMap("mapHazard", 'hazardDimension', d3.schemeOranges[6]),
-    createMap("mapCoping", 'copingDimension', d3.schemeGreens[6])
+    createMap("mapIndex", 'riskIndex', d3.schemeReds[5], [2.0, 3.5, 5.0, 6.5]),
+    createMap("mapVulnerability", 'vulnerabilityDimension', d3.schemePurples[5], [2.0, 3.2, 4.8, 6.4]),
+    createMap("mapHazard", 'hazardDimension', d3.schemeOranges[5], [1.5, 2.7, 4.1, 6.1] ),
+    createMap("mapCoping", 'copingDimension', d3.schemeGreens[5], [3.2, 4.7, 6.0, 7.4])
   ]).then( function(){
     // sync up the movement of the four maps
     for(i=0; i<leafletMaps.length; i++) { 
@@ -87,7 +87,7 @@ function init(err, geoFetched, informFetched){
   });
 }
 
-function createMap(divId, columnId, colorScheme) {
+function createMap(divId, columnId, colorScheme, colorDomain) {
   return new Promise(function(resolve,reject) {
     // store the columnId in an Array, we'll use it when populating info boxes on hover 
     columnIds = columnIds.concat(columnId);
@@ -125,7 +125,7 @@ function createMap(divId, columnId, colorScheme) {
     // set up our color scale
     // https://github.com/d3/d3-scale#scaleThreshold
     var colorScale = d3.scaleThreshold()
-        .domain([1, 3, 5, 7, 9])
+        .domain(colorDomain)
         .range(colorScheme);
     // draw the admin areas on the map
     var admins = geoGroup.selectAll("path")
@@ -147,11 +147,11 @@ function createMap(divId, columnId, colorScheme) {
     map.on('zoom move viewreset', updatePath);
     updatePath();
     
-    d3.select(".legend.row." + divId).selectAll('div').data([0,1,3,5,7,9])
+    d3.select(".legend.row." + divId).selectAll('div').data(colorScheme)
       .enter().append('div')
       .attr('class', "col px-0")
       .html(function(d){
-        return '<div style="height: 10px; background-color:' + colorScale(d) + '">&nbsp;</div>'
+        return '<div style="height: 10px; background-color:' + d + '">&nbsp;</div>'
       })
     d3.select(".legend.row." + divId + " .col:first-child")
       .classed('px-0', false)
