@@ -60,6 +60,7 @@ html {
 .admin__focus {
   stroke: #F53335;
   stroke-width: 1px;
+  color:#FFFFFF;
 }
 .footer {
   color:#E32219;
