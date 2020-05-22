@@ -1,147 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFORM Index 2020</title>
-    <link rel="shortcut icon" href="./img/ifrc-digital-32x32.png" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    
-    <link rel="stylesheet" href="./css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFORM Index 2020</title>
+  <link rel="shortcut icon" href="./img/ifrc-digital-32x32.png" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
 
-<div class="container">
-  
-  <nav class="navbar justify-content-center ">
-    <a class="navbar-brand" href="https://drmkc.jrc.ec.europa.eu/inform-index">
-      <img src="./img/inform.png" width="150" class="d-inline-block align-top text-left" alt="">
-    </a>
-    <h2 class="m-0 informTitle">COVID-19 Risk Index</h2>
-  </nav>
-  
-  <div class="row mb-2">
-    <div class="col text-justify">
-      <small class="informDescription"><p>The INFORM COVID-19 Risk Index is a
-      composite index that identifies: <span class="font-weight-bolder">"countries at risk
-      from health and humanitarian impacts of
-      COVID-19 that could overwhelm current
-      national response capacity, and therefore
-      lead to a need for additional international
-      assistance".</span></p>
-      <p>The INFORM COVID-19 Risk Index is primarily
-      concerned with structural risk factors, i.e. those
-      that existed before the outbreak. It can be used to
-      support prioritization of preparedness and early
-      response actions for the primary impacts of the
-      pandemic, and identify countries where
-      secondary impacts are likely to have the most
-      critical humanitarian consequences.</p>
-      <p class="mb-0">The main scope of the INFORM COVID-19 Risk
-      Index is global and regional risk-informed
-      resource allocation, i.e. where comparable
-      understanding of countries’ risk is important. It
-      cannot predict the impacts of the pandemic in
-      individual countries. It does not consider the
-      mechanisms behind secondary impacts - for
-      example how a COVID-19 outbreak could
-      increase conflict risk. INFORM is working on developing other products
-      that can help monitor changing risks as a result of
-      the pandemic.</p></small>
-    </div>
-  </div>
-  
-  <div class="row text-center justify-content-center mb-4">
-    <div class="col-12 col-md-4 col-lg-3">
-      <small>
-        <a class="redLink" href="https://data.humdata.org/organization/inform">
-        INFORM organization on HDX</a>
-      </small>
-    </div>
-    <div class="col-12 col-md-4 col-lg-3">
-      <small>
-        <a class="redLink" href="https://data.humdata.org/dataset/inform-covid-19-risk-index-version-0-1-2">
-        INFORM COVID-19 Risk Index</a>
-      </small>
-    </div>
-    <div class="col-12 col-md-4 col-lg-3">
-      <small>
-        <a class="redLink" href="https://drmkc.jrc.ec.europa.eu/inform-index">
-          INFORM website</a>
+  <div class="container">
+
+    <nav class="navbar justify-content-center ">
+      <a class="navbar-brand" href="https://drmkc.jrc.ec.europa.eu/inform-index">
+        <img src="./img/inform.png" width="150" class="d-inline-block align-top text-left" alt="">
+      </a>
+      <h2 class="m-0 informTitle">COVID-19 Risk Index</h2>
+    </nav>
+
+    <div class="row mb-2">
+      <div class="col text-justify">
+        <small class="informDescription">
+          <p>The INFORM COVID-19 Risk Index is a
+            composite index that identifies: <span class="font-weight-bolder">"countries at risk
+              from health and humanitarian impacts of
+              COVID-19 that could overwhelm current
+              national response capacity, and therefore
+              lead to a need for additional international
+              assistance".</span></p>
+          <p>The INFORM COVID-19 Risk Index is primarily
+            concerned with structural risk factors, i.e. those
+            that existed before the outbreak. It can be used to
+            support prioritization of preparedness and early
+            response actions for the primary impacts of the
+            pandemic, and identify countries where
+            secondary impacts are likely to have the most
+            critical humanitarian consequences.</p>
+          <p class="mb-0">The main scope of the INFORM COVID-19 Risk
+            Index is global and regional risk-informed
+            resource allocation, i.e. where comparable
+            understanding of countries’ risk is important. It
+            cannot predict the impacts of the pandemic in
+            individual countries. It does not consider the
+            mechanisms behind secondary impacts - for
+            example how a COVID-19 outbreak could
+            increase conflict risk. INFORM is working on developing other products
+            that can help monitor changing risks as a result of
+            the pandemic.</p>
         </small>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6 mb-2 text-center">
-      <h5 class="mapTitle">Combined Risk Index</h5>
-      <div id="mapIndex" class="mapDiv"></div>
-      <div class="mapIndex legend row"></div>
-      <div class="row">
-        <div class="col legendText text-left">Very low</div>
-        <div class="col legendText text-right">Very high</div>
       </div>
     </div>
-    <div class="col-12 col-md-6  mb-2 text-center">
-      <h5 class="mapTitle">Vulnerability</h5>
-      <div id="mapVulnerability" class="mapDiv"></div>
-      <div class="mapVulnerability legend row"></div>
-      <div class="row">
-        <div class="col legendText text-left">Very low</div>
-        <div class="col legendText text-right">Very high</div>
+
+    <div class="row text-center justify-content-center mb-4">
+      <div class="col-12 col-md-4 col-lg-3">
+        <small>
+          <a class="redLink" href="https://data.humdata.org/organization/inform">
+            INFORM organization on HDX</a>
+        </small>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <small>
+          <a class="redLink" href="https://data.humdata.org/dataset/inform-covid-19-risk-index-version-0-1-2">
+            INFORM COVID-19 Risk Index</a>
+        </small>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <small>
+          <a class="redLink" href="https://drmkc.jrc.ec.europa.eu/inform-index">
+            INFORM website</a>
+        </small>
       </div>
     </div>
-  </div>
-  <div class="row mb-5">
-    <div class="col-12 col-md-6  mb-2 text-center">
-      <h5 class="mapTitle">Hazard & Exposure</h5>
-      <div id="mapHazard" class="mapDiv"></div>
-      <div class="mapHazard legend row"></div>
-      <div class="row">
-        <div class="col legendText text-left">Very low</div>
-        <div class="col legendText text-right">Very high</div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 mb-2 text-center">
+        <h5 class="mapTitle">Combined Risk Index</h5>
+        <div id="mapIndex" class="mapDiv"></div>
+        <div class="mapIndex legend row"></div>
+        <div class="row">
+          <div class="col legendText text-left">Very low</div>
+          <div class="col legendText text-right">Very high</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  mb-2 text-center">
+        <h5 class="mapTitle">Vulnerability</h5>
+        <div id="mapVulnerability" class="mapDiv"></div>
+        <div class="mapVulnerability legend row"></div>
+        <div class="row">
+          <div class="col legendText text-left">Very low</div>
+          <div class="col legendText text-right">Very high</div>
+        </div>
       </div>
     </div>
-    <div class="col-12 col-md-6  mb-2 text-center">
-      <h5 class="mapTitle">Lack of Coping Capacity</h5>
-      <div id="mapCoping" class="mapDiv"></div>
-      <div class="mapCoping legend row"></div>
-      <div class="row">
-        <div class="col legendText text-left">Very low</div>
-        <div class="col legendText text-right">Very high</div>
+    <div class="row">
+      <div class="col-12 col-md-6  mb-2 text-center">
+        <h5 class="mapTitle">Hazard & Exposure</h5>
+        <div id="mapHazard" class="mapDiv"></div>
+        <div class="mapHazard legend row"></div>
+        <div class="row">
+          <div class="col legendText text-left">Very low</div>
+          <div class="col legendText text-right">Very high</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  mb-2 text-center">
+        <h5 class="mapTitle">Lack of Coping Capacity</h5>
+        <div id="mapCoping" class="mapDiv"></div>
+        <div class="mapCoping legend row"></div>
+        <div class="row">
+          <div class="col legendText text-left">Very low</div>
+          <div class="col legendText text-right">Very high</div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="row mb-5">
+      <div class="col-12 col-md-6  mb-2 text-center">
+        <h5 class="mapTitle">COVID-specific Vulnerability</h5>
+        <div id="mapCovidVulnerability" class="mapDiv"></div>
+        <div class="mapCovidVulnerability legend row"></div>
+        <div class="row">
+          <div class="col legendText text-left">Very low</div>
+          <div class="col legendText text-right">Very high</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6  mb-2 text-center">
+        <h5 class="mapTitle">Hazard-Independent Vulnerability</h5>
+        <div id="mapHazardIndependentVulnerability" class="mapDiv"></div>
+        <div class="mapHazardIndependentVulnerability legend row"></div>
+        <div class="row">
+          <div class="col legendText text-left">Very low</div>
+          <div class="col legendText text-right">Very high</div>
+        </div>
+      </div>
+    </div>
 
-  <div class="row footer text-center justify-content-center mb-5">
-    <div class="col-12 mb-3">
-      <small class="font-weight-bold">Visualisation produced by</small>
+    <div class="row footer text-center justify-content-center mb-5">
+      <div class="col-12 mb-3">
+        <small class="font-weight-bold">Visualisation produced by</small>
+      </div>
+      <div class="col-6 text-right">
+        <a href="https://go.ifrc.org"><img src="./img/ifrc.svg" height="30px"></a>
+      </div>
+      <div class="col-6 text-left">
+        <a href="https://www.redcross.org/"><img src="./img/amcross.png" height="30px"></a>
+      </div>
+      <div class="col-12 mt-3">
+        <small class="font-weight-bold">from INFORM COVID-19 Risk Index Version 0.1.2</small>
+      </div>
     </div>
-    <div class="col-6 text-right">
-      <a href="https://go.ifrc.org"><img src="./img/ifrc.svg" height="30px"></a>
-    </div>
-    <div class="col-6 text-left">
-      <a href="https://www.redcross.org/"><img src="./img/amcross.png" height="30px"></a>
-    </div>
-    <div class="col-12 mt-3">
-      <small class="font-weight-bold">from INFORM COVID-19 Risk Index Version 0.1.2</small>
-    </div>
-  </div>
-    
-</div> <!-- /container -->
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </div> <!-- /container -->
 
-<script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
-<script src="./js/topojson.v2.min.js"></script>
-<script src="./js/L.Map.Sync.js"></script>
-<script src="./js/main.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="//code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="//unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+  <script src="./js/topojson.v2.min.js"></script>
+  <script src="./js/L.Map.Sync.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
+
 </html>
