@@ -74,7 +74,9 @@ function init(err, geoFetched, informFetched){
     createMap("mapIndex", 'riskIndex', d3.schemeReds[5], [2.0, 3.5, 5.0, 6.5]),
     createMap("mapVulnerability", 'vulnerabilityDimension', d3.schemePurples[5], [2.0, 3.2, 4.8, 6.4]),
     createMap("mapHazard", 'hazardDimension', d3.schemeOranges[5], [1.5, 2.7, 4.1, 6.1] ),
-    createMap("mapCoping", 'copingDimension', d3.schemeGreens[5], [3.2, 4.7, 6.0, 7.4])
+    createMap("mapCoping", 'copingDimension', d3.schemeGreens[5], [3.2, 4.7, 6.0, 7.4]),
+    createMap("mapCovidVulnerability", 'covidVulnerability', d3.schemeBlues[5], [2.0, 3.2, 4.8, 6.4]),
+    createMap("mapHazardIndependentVulnerability", 'hazardIndependentVulnerability', d3.schemeBlues[5], [2.0, 3.2, 4.8, 6.4])
   ]).then( function(){
     // sync up the movement of the four maps
     for(i=0; i<leafletMaps.length; i++) { 
