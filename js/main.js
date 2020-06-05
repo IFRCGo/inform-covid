@@ -57,6 +57,16 @@ Promise.all([
 );
 
 function init(err, geoFetched, informFetched){
+  // merge Somalia and Somaliland tiles according to IFRC standards
+  selected = d3.set(["SOM","SOL"]);
+  somalia = topojson.mergeArcs(geoFetched, geoFetched.objects.world.geometries.filter(function(d) { return selected.has(d.properties.iso); }))
+  somalia.properties = {
+    "iso": "SOM",
+    "name": "Somalia"
+  }
+  geoFetched.objects.world.geometries = geoFetched.objects.world.geometries.filter(function(d) { return !selected.has(d.properties.iso); })
+  geoFetched.objects.world.geometries.push(somalia)
+
   // stash our data as globally accessible variables
   world = topojson.feature(geoFetched, geoFetched.objects.world).features;
   // attach our inform data to our geo data
